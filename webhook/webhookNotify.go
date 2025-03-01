@@ -3,6 +3,7 @@ package webhook
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/PranitRout07/syncandping/internal/logger"
@@ -21,8 +22,14 @@ func NewWebhook(webhook string) *WebhookNotify {
 
 func (w *WebhookNotify) SendMessage(customMessage structure.CustomMessage) (*structure.Resp, error) {
 
+	var msg string 
+	if customMessage.Label != ""{
+		msg = fmt.Sprintf("{ Label: %s }",customMessage.Label) + " " + customMessage.Message 
+	}else{
+		msg = customMessage.Message
+	}
 	body, _ := json.Marshal(map[string]string{
-		"text": customMessage.Message,
+		"text": msg,
 	})
 	responseBody := bytes.NewBuffer(body)
 
