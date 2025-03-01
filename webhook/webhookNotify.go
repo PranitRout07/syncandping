@@ -35,7 +35,7 @@ func (w *WebhookNotify) SendMessage(customMessage structure.CustomMessage) (*str
 
 	req, err := http.NewRequest("POST", w.webhook, responseBody)
 	if err != nil {
-		logger.CustomLogger(logger.Logs{Resp: "", Message: customMessage.Message, PingType: "webhook", Label: customMessage.Label, Err: err})
+		logger.CustomLogger(logger.Logs{Resp: "Failed", Message: customMessage.Message, PingType: "webhook", Label: customMessage.Label, Err: err})
 		return nil, err
 	}
 	req.Header.Set("Content-Type", "application/json")
@@ -43,7 +43,7 @@ func (w *WebhookNotify) SendMessage(customMessage structure.CustomMessage) (*str
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
-		logger.CustomLogger(logger.Logs{Resp: "", Message: customMessage.Message, PingType: "webhook", Label: customMessage.Label, Err: err})
+		logger.CustomLogger(logger.Logs{Resp: "Failed", Message: customMessage.Message, PingType: "webhook", Label: customMessage.Label, Err: err})
 		return nil, err
 	}
 	defer resp.Body.Close()
