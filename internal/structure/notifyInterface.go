@@ -1,7 +1,7 @@
 package structure
 
 type Notify interface{
-	SendMessage(msg string,priority string)(*Resp,error)
+	SendMessage(customMsg CustomMessage)(*Resp,error)
 	// SendImage(img []byte)(*Resp,error)
 }
 

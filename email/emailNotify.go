@@ -1,6 +1,6 @@
 package email
 
-import "github.com/PranitRout07/syncandping/structure"
+import "github.com/PranitRout07/syncandping/internal/structure"
 
 type EmailNotify struct {
 	Email   string
@@ -14,6 +14,6 @@ func NewEmailNotify(email string, passkey string) *EmailNotify {
 	}
 }
 
-func (e *EmailNotify) SendMessage(msg string) (*structure.Resp, error) {
+func (e *EmailNotify) SendMessage(msg string,label string) (*structure.Resp, error) {
 	return nil, nil
 }
