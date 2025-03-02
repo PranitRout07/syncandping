@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/PranitRout07/syncandping/internal/logger"
-	"github.com/PranitRout07/syncandping/internal/structure"
+	"github.com/PranitRout07/syncandping/pkg/logger"
+	"github.com/PranitRout07/syncandping/pkg/structure"
 )
 
 type WebhookNotify struct {

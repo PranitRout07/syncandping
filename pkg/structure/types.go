@@ -1,6 +1,6 @@
 package structure
 
-import "github.com/PranitRout07/syncandping/internal/logger"
+import "github.com/PranitRout07/syncandping/pkg/logger"
 
 type Resp struct {
 	Message string

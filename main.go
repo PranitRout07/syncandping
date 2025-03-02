@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/PranitRout07/syncandping/email"
-	"github.com/PranitRout07/syncandping/internal/structure"
+	"github.com/PranitRout07/syncandping/pkg/structure"
 	// "github.com/PranitRout07/syncandping/webhook"
 	"github.com/joho/godotenv"
 )
